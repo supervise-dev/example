@@ -1,5 +1,4 @@
-name: Supervise Deploy
-
+name: supervise.deploy.yml
 on:
   push:
     branches:
