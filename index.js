@@ -4,11 +4,16 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  next();
+});
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Hello from Fly.io!',
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
+    environment: process.env.NODE_ENV || 'development',
   });
 });
 
