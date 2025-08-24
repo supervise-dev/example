@@ -1,0 +1,15 @@
+{
+  "name": "sample-config",
+  "version": "1.0.0",
+  "settings": {
+    "debug": true,
+    "port": 3000,
+    "environment": "development"
+  },
+  "features": [
+    "auth",
+    "logging",
+    "monitoring"
+  ],
+  "created": "2025-08-24T00:00:00Z"
+}
