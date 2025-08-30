@@ -1,0 +1,23 @@
+{
+  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "env": {
+    "PORT": "8080",
+    "DEVBOX_COREPACK_ENABLED": "1"
+  },
+  "packages": ["nodejs@latest"],
+  "shell": {
+    "init_hook": [
+      "pnpm install",
+      "pnpm run dev"
+    ],
+    "scripts": {
+      "start": [
+        "pnpm install",
+        "pnpm run dev"
+      ],
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
