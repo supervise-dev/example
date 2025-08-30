@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+
+  languages.typescript.enable = true;
+
   packages = with pkgs; [
     git
     nodejs_20
@@ -10,6 +13,7 @@
 
   env = {
     NODE_ENV = "development";
+    PORT = "3000";
   };
 
   enterShell = ''
