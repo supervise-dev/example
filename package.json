@@ -1,11 +1,11 @@
 {
   "name": "flyio-sample-app",
   "version": "1.0.0",
-  "description": "Sample Node.js app for Fly.io deployment",
+  "description": "Sample Node.js app for Supervise deployment",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.18.2"
@@ -13,7 +13,14 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "keywords": ["nodejs", "express", "flyio"],
+  "keywords": [
+    "nodejs",
+    "express",
+    "flyio"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
