@@ -1,10 +1,7 @@
-version: '3.8'
-
+name: "supervise-example"
 services:
   app:
     build: .
     ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
+      - "4000:4000"
     restart: unless-stopped

@@ -1,19 +1,23 @@
-FROM alpine:latest
+FROM debian:12-slim
 
-RUN apk add --no-cache mise linux-headers python3 make g++
+RUN apt-get update  \
+    && apt-get -y --no-install-recommends install  \
+        sudo curl git ca-certificates build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-COPY mise.toml ./
+ENV MISE_DATA_DIR="/mise"
+ENV MISE_CONFIG_DIR="/mise"
+ENV MISE_CACHE_DIR="/mise/cache"
+ENV MISE_INSTALL_PATH="/usr/local/bin/mise"
+ENV PATH="/mise/shims:$PATH"
+# ENV MISE_VERSION="..."
 
-RUN mise trust && mise install
+RUN curl https://mise.run | sh
 
-COPY package*.json ./
-
-RUN mise exec -- npm install --only=production
+WORKDIR /git
 
 COPY . .
 
-EXPOSE 3000
-
-CMD ["mise", "exec", "--", "npm", "start"]
+CMD ["sleep", "infinity"]

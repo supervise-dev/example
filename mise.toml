@@ -21,5 +21,12 @@ outputs = ['node_modules/.pnpm/lock.yaml']
 
 [tasks.dev]
 description = 'Calls your dev script in `package.json`'
-run = 'node --run dev'
+run = 'pnpm run dev'
 depends = ['pnpm-install']
+
+[tasks.up-and-run]
+description = "Update runtimes then run my task"
+run = """
+  mise up
+  mise run dev
+"""
