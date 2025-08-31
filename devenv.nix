@@ -16,8 +16,14 @@
     echo "PNPM version: $(pnpm --version)"
   '';
 
+  tasks = {
+    "app:install" = {
+        exec = "pnpm install";
+        before = [ "devenv:processes:devenv-watch" ];
+    };
+  };
+
   processes = {
-      install-deps.exec = "pnpm install";
       devenv-watch.exec = "nodemon --watch . --ext js,ts,json --exec 'pnpm run dev'";
   };
 }
