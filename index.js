@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello from Fly.io!',
+    message: 'Hello from Supervise!',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
   });

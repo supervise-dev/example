@@ -1,5 +1,5 @@
 {
-  "name": "flyio-sample-app",
+  "name": "supervise-sample-app",
   "version": "1.0.0",
   "description": "Sample Node.js app for Fly.io deployment",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "keywords": ["nodejs", "express", "flyio"],
+  "keywords": ["nodejs", "express", "supervise"],
   "author": "",
   "license": "MIT"
 }
