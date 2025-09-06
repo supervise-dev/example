@@ -18,8 +18,8 @@ RUN curl https://mise.run | sh
 
 WORKDIR /git
 
-RUN mise trust
-
 COPY . .
+
+RUN mise trust
 
 CMD ["mise", "--yes", "run", "dev"]
