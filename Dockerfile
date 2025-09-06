@@ -1,24 +1,11 @@
-FROM debian:12-slim
+FROM node:22-slim
 
-RUN apt-get update  \
-    && apt-get -y --no-install-recommends install  \
-        sudo curl git ca-certificates build-essential \
-    && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+COPY package*.json ./
 
-ENV MISE_DATA_DIR="/mise"
-ENV MISE_CONFIG_DIR="/mise"
-ENV MISE_CACHE_DIR="/mise/cache"
-ENV MISE_INSTALL_PATH="/usr/local/bin/mise"
-ENV PATH="/mise/shims:$PATH"
-ENV MISE_TRUSTED_CONFIG_PATHS="/git:/root"
-# ENV MISE_VERSION="..."
-
-RUN curl https://mise.run | sh
-
-WORKDIR /git
+RUN npm ci
 
 COPY . .
 
-CMD ["mise", "--yes", "run", "dev"]
+CMD ["npm", "run", "dev"]
