@@ -12,6 +12,7 @@ ENV MISE_CONFIG_DIR="/mise"
 ENV MISE_CACHE_DIR="/mise/cache"
 ENV MISE_INSTALL_PATH="/usr/local/bin/mise"
 ENV PATH="/mise/shims:$PATH"
+ENV MISE_TRUSTED_CONFIG_PATHS="/git:/root"
 # ENV MISE_VERSION="..."
 
 RUN curl https://mise.run | sh
@@ -19,7 +20,5 @@ RUN curl https://mise.run | sh
 WORKDIR /git
 
 COPY . .
-
-RUN mise trust
 
 CMD ["mise", "--yes", "run", "dev"]
