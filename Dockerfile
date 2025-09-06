@@ -18,6 +18,8 @@ RUN curl https://mise.run | sh
 
 WORKDIR /git
 
+RUN mise trust
+
 COPY . .
 
-CMD ["sleep", "infinity"]
+CMD ["mise", "--yes", "run", "dev"]
