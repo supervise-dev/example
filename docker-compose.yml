@@ -1,7 +1,0 @@
-name: "supervise-example"
-services:
-  app:
-    build: .
-    ports:
-      - "4000:4000"
-    restart: unless-stopped
