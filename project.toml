@@ -1,0 +1,7 @@
+[[build.env]]
+name = "NODE_ENV"
+value = "production"
+
+[[processes]]
+type = "web"
+command = "npm start"
