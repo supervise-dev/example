@@ -1,7 +1,0 @@
-{
-  "processes": {
-    "dev": {
-      "command": "npm run dev"
-    }
-  }
-}
